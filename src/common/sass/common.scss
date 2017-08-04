@@ -1,0 +1,41 @@
+
+//无参数mixin
+@mixin icon {
+    display: inline-block;
+    height: 0;
+    position: relative;
+    overflow: visible;
+}
+
+@mixin icon_before($url) {
+	background: url($url) no-repeat;
+    -webkit-background-size: 150px auto;
+  	content: "";
+  	display: block;
+  	position: absolute;
+  	left: 0;
+}
+
+@mixin dis_flexS {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin dis_flexC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin dis_flexE {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin esp {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
