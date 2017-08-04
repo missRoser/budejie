@@ -1,14 +1,17 @@
 # budejie
 
-> test
+> 仿造百思不得姐。不代表博主很污。。。
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 初始化项目
 npm install
 
-# serve with hot reload at localhost:8080
+#运行接口
+npm run api
+
+#再开一个窗口 运行项目
 npm run dev
 
 # build for production with minification
