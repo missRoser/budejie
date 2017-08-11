@@ -46,6 +46,7 @@ export default {
 <style lang="scss">
 @import "./common/sass/reset.scss";
 @import "./common/sass/common.scss";
+@import "./common/font/scss/font-awesome.scss";
 
 .app-top{
   position: fixed;

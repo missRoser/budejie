@@ -6,6 +6,7 @@ import App from './App.vue';
 import alls from './components/alls/alls.vue';
 import imgs from './components/imgs/imgs.vue';
 import txts from './components/txts/txts.vue';
+import comments from './components/comments/comments.vue';
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
 	{
 		path: '/txts',
 		component: txts
+	},
+	{
+		path: '/comment/:id/:urls',
+		name: 'comment',
+		component: comments
 	}
 ]
 

@@ -8,7 +8,7 @@
 		<div class="tip">{{dataList.text}}</div>
 
       <div class="tool">
-        <span class="comment"><i class="icon-comment"></i>{{dataList.comment}}</span>
+        <router-link :to="'/comment/'+dataList.id+'/txts'"><span class="comment"><i class="icon-comment"></i>{{dataList.comment}}</span></router-link>
         <span class="up"><i class="icon-up"></i>{{dataList.up}}</span>
         <span class="down"><i class="icon-down"></i>{{dataList.down}}</span>
         <span class="forward"><i class="icon-forward"></i>{{dataList.forward}}</span>
@@ -68,14 +68,7 @@ export default {
           _this.np = reson.data.info.np;
         })
       }
-    },
-  	computed: {
-  		getAllList: function() {
-  			this.axios.get('http://localhost:8088/txts.json').then(function(reson){
-  				_this.data = reson.data.list.concat(_this.data);
-  			})
-  		}
-  	}
+    }
 }
 </script>
 

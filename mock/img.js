@@ -63,3 +63,16 @@ app.get('/txts.json',function(req,res){
 	})
 
 })
+
+app.get('/comment.json',function(req,res){
+	//http://c.api.budejie.com/topic/comment_list/25965159/0/bs0315-iphone-4.5.7/0-20.json
+
+	var id = req.query.id;
+	var urlL = 'http://c.api.budejie.com/topic/comment_list/'+id+'/0/bs0315-iphone-4.5.7/0-20.json';
+	request.get(urlL,function(err,reson,body){
+		res.setHeader('Content-Type', 'application/json')
+		res.setHeader("Access-Control-Allow-Origin", "*")
+		res.send(body);
+		res.end();
+	})
+})

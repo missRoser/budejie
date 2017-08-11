@@ -17,7 +17,8 @@
       </div>
 
       <div class="tool">
-        <span class="comment"><i class="icon-comment"></i>{{dataList.comment}}</span>
+        <router-link :to="'/comment/'+dataList.id+'/alls'"><span class="comment"><i class="icon-comment"></i>{{dataList.comment}}</span></router-link>
+        
         <span class="up"><i class="icon-up"></i>{{dataList.up}}</span>
         <span class="down"><i class="icon-down"></i>{{dataList.down}}</span>
         <span class="forward"><i class="icon-forward"></i>{{dataList.forward}}</span>
@@ -46,7 +47,8 @@ export default {
         limit: 20,
         page: 1,
         np : 0,
-        finish: true
+        finish: true,
+        params: this.$route.params.id
   		}
   	},
   	created () {
@@ -54,7 +56,7 @@ export default {
       _this.finish = false;
       if(!_this.data.length){
         _this.axios.get('http://localhost:8088/alls.json').then(function(reson){
-            //console.log(reson.list);
+            console.log(reson.list);
             _this.finish = true;
             _this.data = reson.data.list;
             _this.page++;
@@ -82,22 +84,12 @@ export default {
           _this.page++;
           _this.np = reson.data.info.np;
         })
+      },
+      paramId () {
+        console.log(1);
+        this.data.params
       }
-    },
-  	computed: {
-  		getAllList: function() {
-        var _this = this;
-  			this.axios.get('http://localhost:8088/alls.json',{
-          params: {
-            np: _this.np
-          }
-        }).then(function(reson){
-  				_this.data = reson.data.list.concat(_this.data);
-          _this.page++;
-          _this.np = reson.data.info.np;
-  			})
-  		}
-  	}
+    }
 }
 </script>
 
