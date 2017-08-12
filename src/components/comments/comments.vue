@@ -1,6 +1,6 @@
 <template>
   <div class="comments">
-    <div class="comments-link" @click="goBack"><i class="fa fa-chevron-left"></i>返回上一页</div>
+    <div class="comments-link" @click="goBack"><i class="iconfont icon-back"></i>返回</div>
     <div></div>
     <ul v-show="datanormal.length">
       <li v-for="data in datanormal">
@@ -59,7 +59,14 @@ export default {
     methods: {
       goBack () {
         window.history.back();
+      },
+      handleScroll (event) {
+        console.log(111);
       }
+    },
+    ready () {
+      console.log(11111111111111111111111);
+      window.addEventListener('scroll',this.handleScroll,false)
     },
     watch :{
       "$route" () {
@@ -76,9 +83,12 @@ export default {
   margin-top: 88px;
   background-color: #ececec;
   .comments-link{
-    height: 36px;
-    line-height: 36px;
+    height: 42px;
+    padding-left: 3%;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 42px;
     color: #111;
+    background-color: #fff;
   }
   ul{
     width: 100%;

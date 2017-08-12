@@ -22,7 +22,7 @@
       <!-- 路由匹配到的组件将渲染在这里 -->
       <router-view></router-view>
 
-      <i class="icon-back" @click="backTop">返回</i>
+      <span class="go-back" @click="backTop"><i class="iconfont icon-top"></i></span>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
 <style lang="scss">
 @import "./common/sass/reset.scss";
 @import "./common/sass/common.scss";
-@import "./common/font/scss/font-awesome.scss";
+@import "./common/sass/iconfont.scss";
 
 .app-top{
   position: fixed;
@@ -107,10 +107,14 @@ export default {
     }
   }
 }
-.icon-back{
+.go-back{
   position: fixed;
   right: 10px;
   bottom: 20px;
+}
+.icon-top{
+  font-size: 30px;
+  font-weight: 600;
 }
 
 </style>
